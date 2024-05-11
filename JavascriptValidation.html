@@ -1,0 +1,23 @@
+document.getElementById('myForm').onsubmit = function(event) {
+    var name = document.getElementById('name');
+    var email = document.getElementById('email');
+    var description = document.getElementById('description');
+    var 
+    var rating = document.querySelector('input[name="rating"]:checked');
+
+    if (name.value === '' || email.value === '' || description.value.trim() === '' || !rating) {
+        alert('Please fill out all required fields, including the star rating.');
+        event.preventDefault();  // Prevent form from submitting
+        return false;
+    }
+    
+    if (!email.checkValidity()) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+        return false;
+    }
+
+    // Form is valid
+    alert('Form submitted successfully!');
+    return true;
+};

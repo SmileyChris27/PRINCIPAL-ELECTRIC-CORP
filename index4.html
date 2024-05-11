@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+  <style>
+    /* CSS styles for the container */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: black;
+      margin: 0; /* Added to remove default margin */
+      padding: 0; /* Added to remove default padding */
+    }
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Make the header sticky */
+    top: 0; /* Stay at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Stay on top of other content */
+}
+
+
+    
+.logo img {
+    width: 50px;
+    cursor: pointer;
+}
+
+.menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+}
+
+.menu ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.menu ul li a {
+        font-family: 'Montserrat', sans-serif; /* Applying Montserrat */
+        font-weight: 700; /* Bold for readability and impact */
+        text-decoration: none;
+        color: gold;
+        display: block;
+        padding: 5px 20px;
+}
+
+.menu ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.menu ul li:hover ul {
+    display: block;
+}
+
+.menu ul li ul li {
+    display: block;
+}
+
+.menu ul li a:hover, .menu ul li ul li a:hover {
+    text-decoration: underline;
+}
+
+.menu-toggle {
+            display: none;
+            flex-direction: column;
+            width: 30px;
+            height: 25px;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: white;
+            border-radius: 3px;
+        }
+        .menu ul.active {
+            display: block;
+        }
+
+
+
+
+.container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      height : auto;
+    }
+
+    .box {
+      width: 500px; /* Adjust the width as needed */
+      height: 500px; /* Adjust the height as needed */
+      perspective: 1000px;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+    .inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+
+    .box:hover .inner,
+    .flipped .inner {
+      transform: rotateY(180deg);
+    }
+
+    .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      color: white;
+      font-weight: bold;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .front {
+      background-color: #3498db;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .back {
+      background-color: #2ecc71;
+      background-size: cover;
+      background-position: center;
+      transform: rotateY(180deg);
+    }
+
+    .container2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .video-container {
+      position: relative;
+    }
+
+    .caption-content {
+      width: 100%;
+    }
+
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+    }
+
+    .text-overlay h1,
+    .text-overlay h2,
+    .text-overlay h3,
+    .text-overlay p {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .text-overlay h2 {
+      font-weight: 900;
+    }
+
+    .video-container .text-overlay {
+      color: white; /* Change text color to red */
+    }
+
+  .text-overlay h1 {
+    font-size: calc(20px + 2vw); /* Dynamically adjust font size based on the viewport width */
+}
+
+.text-overlay p {
+    font-size: calc(15px + 1vw); /* Dynamically adjust paragraph font size */
+}
+
+.text-overlay h3 {
+    font-size: calc(20px + 1vw); /* Dynamically adjust sub-heading font size */
+}
+
+   
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .licenses,
+    .members,
+    .connect,
+    .address {
+      flex: 1;
+      margin: 0 20px;
+    }
+
+
+/* Media Queries */
+    @media screen and (max-width: 1024px) {
+      .text-overlay h1,
+      .text-overlay h2,
+      .text-overlay h3,
+      .text-overlay p {
+        font-size: 1.5em;
+      }
+      .caption-content {
+        padding: 50px; /* Adjust padding for smaller screens */
+      }
+      
+      .box {
+        width: calc(33.33% - 40px);
+        margin: 20px;
+      }
+      .footer-container {
+        flex-direction: column;
+      }
+    }
+
+    
+    @media screen and (max-width: 768px) {
+      .text-overlay h1,
+      .text-overlay h2,
+      .text-overlay h3,
+      .text-overlay p {
+        font-size: 1.2em;
+      }
+      .caption-content {
+        padding: 30px; /* Adjust padding for even smaller screens */
+      }
+
+      #logo-img {
+        max-width: 150px; /* Adjust logo size */
+      }
+      .container2 {
+        flex-wrap: wrap;
+      }
+      .box {
+        margin: 10px;
+        width: calc(50% - 20px);
+      }
+
+      .footer-container {
+        flex-direction: column;
+      }
+
+      .licenses,
+      .members,
+      .connect,
+      .address {
+        margin: 10px 0;
+      }
+      .menu ul {
+                display: none;
+                position: absolute;
+                background-color: #333;
+                right: 0;
+                top: 60px;
+                width: 100%;
+                flex-direction: column;
+            }
+            .menu ul li {
+                display: block;
+                text-align: center;
+            }
+            .menu ul li a {
+                padding: 10px;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+      .text-overlay h1,
+      .text-overlay h2,
+      .text-overlay h3,
+      .text-overlay p {
+        font-size: 1em;
+      }
+
+      .box {
+        width: calc(100% - 20px);
+      }
+      .licenses,
+      .members,
+      .connect,
+      .address {
+        margin: 10px 0;
+      }
+      .social-icons img {
+        width: 30px;
+        margin-right: 10px;
+      }
+
+      .social-icons img:last-child {
+          margin-right: 0;
+    }
+
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="location.href='home.html';">
+            <img src="electrical3.png" alt="Company Logo">
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li>
+                    <a href="#">Careers</a>
+                    <ul>
+                        <li><a href="career-opportunities.html">Career Opportunities</a></li>
+                        <li><a href="career-application.html">Career Application</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li>
+                    <a href="#">Services</a>
+                    <ul>
+                        <li><a href="industrial.html">Industrial</a></li>
+                        <li><a href="commercial.html">Commercial</a></li>
+                        <li><a href="residential.html">Residential</a></li>
+                    </ul>
+                </li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+    <script src="script.js"></script>
+
+
+<div class="container">
+  <div class="video-container">
+    <video class="caption-content caption-active" autoplay loop muted>
+      <source src="New_York_Video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="text-overlay">
+            <h1><strong>WELCOME TO PRINCIPAL ELECTRIC CORP!</strong></h1>
+            <p><strong>We are a premier electrical contracting firm known for its mastery and craftsmanship in the electrical industry. Our Team specializes in top-tier electrical soulutions for Commerical, Residential and Commerical projects.</strong></p><strong>
+            <p><strong></strong></p>
+            <h3>CONTRACTING FIRM</h3></strong>
+            <p id="date"><strong></strong></p>
+        </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-container">
+    <div class="licenses">
+      <h4>License Company Principal Electric Corp Areas Covered</h4>
+      <p>Calfornia LIC# 167951 Master Electrician</p>
+      <p>City of Long Beach LIC# 3524 Master Electrician</p>
+      <p>Connecticut LIC# ELC.0203639-E1 Master Electrician</p>
+      <p>Inc. Village of Freeport LIC# E-8879 Master Electrician</p>
+      <p>Inc. Village of Hempstead LIC# 775 Master Electrician</p>
+    </div>
+
+     <div class="licenses">
+      <h4>License Company Principal Electric Corp Areas Covered</h4>
+      <p>Inc. Village of Mineola LIC# 15787 Master Electrician</p>
+      <p>Inc. Village of Valley of Mineola LIC# 776 Master Electrician</p>
+      <p>New Jeresey LIC# 34EI01857600</p>
+      <p>New York City LIC# 13041 Master Electrician</p>
+    </div>
+
+    <div class="licenses">
+      <h4>License Company Principal Electric Corp Areas Covered</h4>
+        <p>North Carolina LIC# U.34073 Master Electrician</p>
+        <p>Orange County LIC# 764 Master Electrician</p>
+        <p>Putnam County LIC# 10381 Master Electrician</p>
+        <p>Rockland County LIC# E-614 Master Electrician</p>
+        <p>Suffolk County LIC# ME-60166 Master Electrician</p>
+    </div>
+
+      <div class="licenses">
+      <h4>License Company Principal Electric Corp Areas Covered</h4>        
+        <p>Sullivan County LIC# M-522 Master Electrician</p>
+        <p>Town of Hampstead LIC# 2784 Master Electrician</p>
+        <p>Town of North Hampstead LIC# Master Electrician</p>
+        <p>Westchester County LIC# 1874 Master Electrician</p>
+    </div>
+
+  <div class="members">
+      <h4>MEMBERS OF</h4>
+      <p>osha</p>
+      <p>nema</p>
+      <p>nfpa</p>
+      <p>Bicsi</p>
+    </div>
+  
+<div class="address">
+      <p>Phone: Phone Number</p>
+      <p>Email: Email To Use</p>
+      <p>Website Made by SmileyTechnology</p>
+       <p>© 2024 Principal Electric Corp. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  
+document.querySelectorAll('.menu a').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        console.log('Mouse over:', item.textContent);
+    });
+});
+
+
+// JavaScript for dynamically updating the date
+  function updateDate() {
+    var currentDate = new Date();
+    var month = currentDate.toLocaleString('default', { month: 'long' });
+    var day = currentDate.getDate();
+    document.getElementById('date').innerHTML = month.toUpperCase() + ' ' + day;
+  }
+
+  const boxes = document.querySelectorAll('.box');
+  boxes.forEach(box => {
+    box.addEventListener('click', () => {
+      box.classList.toggle('flipped');
+    });
+  });
+
+  // Call the function initially to set the date
+  updateDate();
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu ul').classList.toggle('active');
+        });
+
+
+</script>
+
+</body>
+</html>

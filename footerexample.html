@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Compact and Vibrant Footer Example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<style>
+
+footer {
+    background-color: #20232a; /* Dark background for contrast */
+    color: white;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.license-section, .contact-info, .social-media {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.license-section h4, .contact-info h4, .social-media h4 {
+    color: #FFD700; /* Gold color for headers */
+    margin-bottom: 10px;
+}
+
+.license-group h5 {
+    margin-top: 0;
+    color: #FFA500; /* Orange color for sub-headers */
+}
+
+.license-group p {
+    font-size: 12px; /* Smaller font for compact design */
+    margin: 3px 0;
+}
+
+.social-media a img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+ .copyright {
+        text-align: center; /* Center the text */
+        width: 100%; /* Ensure it spans the full width */
+        margin-top: 20px; /* Optional: Add space above the text */
+    }
+
+
+
+</style>
+
+
+
+
+<footer>
+    <div class="footer-container">
+        <div class="license-section">
+            <h4>Licenses & Certifications</h4>
+            <div class="license-group">
+                <h5>License Company Principal Electric Corp</h5>
+                <p>CA: #167951, CT: #ELC.0203639-E1, NY: #13041</p>
+                <p>NC: #U.34073, NJ: #34EI01857600</p>
+            </div>
+            <div class="license-group">
+                <h5>Local Areas Covered</h5>
+                <p>Long Beach: #3524, Freeport: #E-8879, Hempstead: #775</p>
+                <p>Mineola: #15787, Valley Stream: #776, More...</p>
+            </div>
+        </div>
+        <div class="contact-info">
+            <h4>Contact Us</h4>
+            <p>Phone: +1-555-123-4567</p>
+            <p>Email: info@principalelectric.com</p>
+        </div>
+        <div class="social-media">
+            <h4>Connect with Us</h4>
+            <a href="your_facebook_link" target="_blank"><img src="path_to_facebook_icon.png" alt="Facebook"></a>
+            <a href="your_twitter_link" target="_blank"><img src="path_to_twitter_icon.png" alt="Twitter"></a>
+            <a href="your_instagram_link" target="_blank"><img src="path_to_instagram_icon.png" alt="Instagram"></a>
+            <!-- Add other social media links as needed -->
+        </div>
+        <div class="social-media">
+            <h4>Connect with Our Partners</h4>
+            <a href="https://www.osha.gov" target="_blank"><img src="path_to_osha_icon.png" alt="OSHA"></a>
+            <a href="https://www.nema.org" target="_blank"><img src="path_to_nema_icon.png" alt="NEMA"></a>
+            <a href="https://www.nfpa.org" target="_blank"><img src="path_to_nfpa_icon.png" alt="NFPA"></a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2024 Principal Electric Corp. All rights reserved.</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+
+
+<script>
+    // Basic JavaScript to check the footer's load
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Footer is ready and vibrant!");
+});
+
+</script>
+</body>
+</html>
